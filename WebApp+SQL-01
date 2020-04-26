@@ -41,5 +41,5 @@ az webapp create -g $RG -p PU-SVC01 -n $E
 
 
 #Add DB Connection string to webapp
-az webapp config connection-string set --connection-string-type SQLAzure --name $E --resource-group $RG --settings defaultConnection="$Y"
+az webapp config connection-string set --connection-string-type SQLAzure --name $E --resource-group $RG --settings DefaultConnectionString="$Y"
 
