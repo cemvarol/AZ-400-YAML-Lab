@@ -43,5 +43,6 @@ az webapp create -g $RG -p PU-SVC01 -n $E
 #Add DB Connection string to webapp
 az webapp config connection-string set --connection-string-type SQLAzure --name $E --resource-group $RG --settings DefaultConnectionString="$Y"
 
-echo -e "\nPlease take a note of these \nYour Resource Group Name is $RG \nYour App name is $E \nYour Sql user name is $user \nYour Sql Password is $pass \nYour Sql Server name is $D.database.windows.net \nYour Database name is partsunlimited \n"
+echo -e "\nPlease take a note of these \n Resource Group Name is $RG \n App name is $E \n Sql user name is $user \n Sql Password is $pass \n Sql Server fqdn is $D.database.windows.net \n Server Name is $D\n Website Name is $E Database name is partsunlimited \n"
+
 
