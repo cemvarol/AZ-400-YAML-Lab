@@ -9,6 +9,7 @@ D=$(echo "$C"db01)
 E=$(echo "$C"wa01)
 RG=PartsUnlimited01
 L=EastUS
+HP=PU-SVC01
 user=sysadmin
 pass=1q2w3e4r5t6y*
 startip=0.0.0.0
@@ -34,15 +35,16 @@ az sql server firewall-rule create \
     --end-ip-address $endip
 
 # Create Service Plan for webapp
-az appservice plan create -n PU-SVC01 --sku S1 -g $RG -l $L
+az appservice plan create -n $HP --sku S1 -g $RG -l $L
 
 # Create WebApp
-az webapp create -g $RG -p PU-SVC01 -n $E
+az webapp create -g $RG -p $HP -n $E
 
 
 #Add DB Connection string to webapp
 az webapp config connection-string set --connection-string-type SQLAzure --name $E --resource-group $RG --settings DefaultConnectionString="$Y"
 
-echo -e "\nPlease take a note of these \n Resource Group Name is $RG \n App name is $E \n Sql user name is $user \n Sql Password is $pass \n Sql Server fqdn is $D.database.windows.net \n Sql Server Name is $D\n Website Name is $E\n Database name is partsunlimited \n"
+echo -e "Hosting Plan Name is $HP \nResource Group Name is $RG\nServer Name is $E\nWebsite Name is $E \n"
+
 
 
