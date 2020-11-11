@@ -17,6 +17,7 @@ endip=255.255.255.255
 
 Y=$(echo "'Data Source=tcp:"$D".database.windows.net,1433;Initial Catalog=partsunlimited;User Id=sysadmin@"$D".database.windows.net;Password="$pass";'")
 
+az provider register --namespace Microsoft.insights
 
 # Create Resource Group
 az group create --name $RG --location $L
