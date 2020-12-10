@@ -15,8 +15,6 @@ pass=1q2w3e4r5t6y*
 startip=0.0.0.0
 endip=255.255.255.255
 
-Y=$(echo "'Data Source=tcp:"$D".database.windows.net,1433;Initial Catalog=partsunlimited;User 
-
 clear
 
 echo -e "\nPlease take a note of these \nHosting Plan Name is $HP \nResource Group Name is $RG\nServer Name is $E\nWebsite Name is $E \n"
